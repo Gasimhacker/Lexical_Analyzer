@@ -1,0 +1,2 @@
+int x1 = 10;
+int 1x;   // invalid, but lexer should still tokenize
