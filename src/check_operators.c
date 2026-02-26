@@ -2,7 +2,7 @@
 
 int is_valid_three_char_operator(char *buffer, int start, char *lexeme)
 {
-    int i;
+    size_t i;
     char *three_char_operators[] = {">>=", "<<="};
 
     for (i = 0; i < sizeof(three_char_operators) / sizeof(three_char_operators[0]); i++)
@@ -18,7 +18,7 @@ int is_valid_three_char_operator(char *buffer, int start, char *lexeme)
 
 int is_valid_two_char_operator(char *buffer, int start, char *lexeme)
 {
-    int i;
+    size_t i;
     char *two_char_operators[] = {"+=", "*=", "-=", "/=", "%%=",
                                   "&=", "|=", "^=", ">=", "<=", "!=", "==",
                                   "++", "--", "&&", "||", ">>", "<<", "->"};
@@ -36,7 +36,7 @@ int is_valid_two_char_operator(char *buffer, int start, char *lexeme)
 
 int is_valid_one_char_operator(char *buffer, int start, char *lexeme)
 {
-    int i;
+    size_t i;
     char *one_char_operators[] = {"+", "-", "*", "/", "%%", "=",
                                  "&", "|", "^", "~", ">", "<", "!"};
 

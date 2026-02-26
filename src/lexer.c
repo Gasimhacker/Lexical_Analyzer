@@ -26,6 +26,9 @@ int lexer(char *filename)
     while (buffer[i])
     {
         skip_whitespace_and_comments(&i, buffer);
+
+	if (!buffer[i])
+	    break;
         
         if (is_punctuator(buffer[i]))
         {
@@ -36,7 +39,7 @@ int lexer(char *filename)
         
         if (isalpha(buffer[i]) || buffer[i] == '_')
         {
-            i = read_lexeme(i, buffer, lexeme);
+            i = read_identifier(i, buffer, lexeme);
             if (is_keyword(lexeme))
                 printf("\'%s\' : KEYWORD\n", lexeme);
             else

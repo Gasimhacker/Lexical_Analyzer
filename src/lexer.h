@@ -24,7 +24,7 @@ int is_valid_three_char_operator(char *buffer, int start, char *lexeme);
 int is_valid_two_char_operator(char *buffer, int start, char *lexeme);
 int is_valid_one_char_operator(char *buffer, int start, char *lexeme);
 void skip_whitespace_and_comments(int *index, char *buffer);
-int read_lexeme(int start, char *buffer, char *lexeme);
+int read_identifier(int start, char *buffer, char *lexeme);
 int read_number(int start, char *buffer, char *lexeme);
 int read_string(int start, char *buffer, char *lexeme);
 int lexer(char *filename);
