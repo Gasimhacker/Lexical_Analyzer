@@ -40,7 +40,7 @@ else
 endif
 
 # Delete executable
-clean: clean
+clean:
 	rm -f $(NAME)
 
 # Rebuild from scratch
