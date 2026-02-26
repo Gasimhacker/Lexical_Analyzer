@@ -34,7 +34,14 @@ int read_identifier(int start, char *buffer, char *lexeme);
 int read_number(int start, char *buffer, char *lexeme);
 int read_string(int start, char *buffer, char *lexeme);
 
+/* Tokens processing function */
+void process_token(char *buffer, int *i, char *lexeme);
+
 /* Main lexer function */
 int lexer(char *filename);
+
+/* Path Processing function */
+void process_path(const char *path);
+void process_directory(const char *directory_path);
 
 #endif /* LEXER_H */

@@ -64,8 +64,8 @@ int read_string(int start, char *buffer, char *lexeme)
 	if (buffer[start] == '\0')
 	{
 		printf("Error: Unterminated string literal\n");
-        free(lexeme);
-        free(buffer);
+		free(lexeme);
+		free(buffer);
 		exit(1);
 	}
 	lexeme[i] = '\0';
