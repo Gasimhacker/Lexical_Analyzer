@@ -11,9 +11,10 @@
 #include <limits.h>
 
 /* Cross-platform PATH_MAX */
-#ifndef PATH_MAX
-#define PATH_MAX 4096
+#ifdef PATH_MAX
+#undef PATH_MAX
 #endif
+#define PATH_MAX 4096
 
 /* File operations */
 char *read_file(char *filename, size_t *size);
@@ -43,5 +44,7 @@ int lexer(char *filename);
 /* Path Processing function */
 void process_path(const char *path);
 void process_directory(const char *directory_path);
+int is_directory(const char *path);
+int is_regular_file(const char *path);
 
 #endif /* LEXER_H */

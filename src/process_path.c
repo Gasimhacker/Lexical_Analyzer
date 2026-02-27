@@ -22,10 +22,16 @@ void process_directory(const char *directory_path)
 
 	while ((entry = readdir(dir)) != NULL)
 	{
-		if (entry->d_type == DT_REG)
+		/* Skip . and .. directories */
+		if (strcmp(entry->d_name, ".") == 0 ||
+		    strcmp(entry->d_name, "..") == 0)
+			continue;
+
+		snprintf(full_path, sizeof(full_path), "%s/%s",
+			 directory_path, entry->d_name);
+
+		if (is_regular_file(full_path))
 		{
-			snprintf(full_path, sizeof(full_path), "%s/%s",
-				 directory_path, entry->d_name);
 			printf("Processing file: %s\n", full_path);
 			lexer(full_path);
 			printf("\n");
